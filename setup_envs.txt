@@ -1,0 +1,10 @@
+basic env
+conda install -c conda-forge spacy -y
+python -m spacy download en_core_web_md
+conda install -c conda-forge scikit-learn -y 
+conda install -c conda-forge matplotlib -y
+conda install -c anaconda nltk -y
+conda install -c conda-forge vadersentiment -y
+conda install -c anaconda jupyter -y
+conda install -c pandas -y
+conda install -c conda-forge textblob -y

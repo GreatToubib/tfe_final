@@ -1,0 +1,3 @@
+id clusterName sil_score davies_score calinski_score amis fms
+|diablo III_agglo| 0.023607133 48.94530700260027 5.877382871174938
+|diablo III_mshifts| 0.13584399 2.304152382531807 1.071498710270583
