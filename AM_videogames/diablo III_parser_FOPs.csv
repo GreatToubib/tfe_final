@@ -497,6 +497,22 @@ product,excellent,4,2.2876
 product,great,2,1.2498
 product,better,2,0.8808
 pirates,offline,2,-0.256
+"
+
+,offline,2,-0.256"
+"
+
+,bad,2,-1.0846"
+"
+
+,addictive,2,0.0"
+"
+
+,maybe,2,0.0"
+isp,unreliable,2,0.0
+"isp,
+
+,2,0.0"
 idea,dumbest,2,-1.0212
 idea,bad,4,-2.1692
 idea,fun,2,1.0212
@@ -955,6 +971,8 @@ customization,limited,2,-0.4526
 customization,usually,2,0.0
 variations,minor,2,0.0
 doctor,just_hi,2,0.0
+1/3,useful,2,0.8808
+sorc,-,2,0.0
 sorc,rolled,2,0.0
 prices,insane,2,-0.8038
 prices,horribly,2,-1.0534
@@ -985,6 +1003,7 @@ bonuses,bonuses,2,1.1148
 bonuses,pre,2,0.0
 bonuses,-,2,0.0
 bonuses,determined,2,0.68
++,random,2,0.0
 stats,worse,2,-0.9534
 stats,random,2,0.0
 stats,unique,2,0.0
@@ -1207,6 +1226,9 @@ things,dumbed,2,-0.68
 things,favorite,2,0.9176
 things,diagnostic,2,0.0
 things,positive,2,1.1148
+"things,
+
+,2,0.0"
 things,shiny,2,0.0
 things,n't_development,2,0.0
 things,soon,2,0.0
@@ -1443,6 +1465,7 @@ touches,gentle,2,0.8808
 circle,unmoving,2,0.0
 minion,normal,2,0.0
 circles,bright,2,0.8808
+" ,worth,2,0.4526"
 predecessor,epic,2,0.0
 stars,accumulative,2,0.0
 complaints,early,2,0.0
@@ -1604,11 +1627,7 @@ gamers,solo,2,0.0
 gamers,hardcore,2,0.0
 concerns,valid,2,0.0
 rpg'ers,hardcore,2,0.0
-cheats,dangerous,2,-0.9534
-storage,shared,4,1.36
-storage,bigger,2,0.0
-program,secondary,2,0.0
-program,esque,2,0.0
+cheats,dangerous,2,-0.953
 voodoo,sweet,2,0.9176
 sequel,perfect,2,1.1438
 run,long,2,0.0
@@ -1616,6 +1635,11 @@ ref,normal,2,0.0
 battlechest,new,2,0.0
 version</a,new,2,0.0
 waypoints,nice,2,0.843
+locations,new,2,0.0
+mazes,random,2,0.0
+customers,more_happy,2,1.223
+delivery,fast!,seller,2,0.0
+nephew,away,2,0.0
 wow,awesome,2,1.2498
 disks,anymore,2,0.0
 setup,triple,2,0.0
@@ -1626,6 +1650,8 @@ special,black,2,0.0
 mercy,complete,2,0.0
 difficulties,higher,2,0.0
 difficulties,fun,2,-0.8046
+"difficulties,not_
+,2,0.0"
 difficulties,more_challenging,2,0.4494
 difficulties,multiple,2,0.0
 clicking,mindless,2,-0.8808
