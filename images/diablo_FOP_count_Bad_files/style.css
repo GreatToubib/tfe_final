@@ -1,0 +1,88 @@
+body{
+    background: white;
+}
+
+.method-header{
+    font-size: 25px;
+    color: black;
+}
+
+.card-image{
+    max-height: 300px;
+    margin-top: 12px;
+}
+.card-image:hover{
+    transform: scale(1.1);
+}
+
+.texte {
+    display: none;
+    max-width: 80%;
+    vertical-align: top;
+    horiz-align: center;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+.accueil {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 32px;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 50px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 50px;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.prevDdl, .nextDdl {
+    cursor: pointer;
+    width: auto;
+    color: white;
+    font-weight: bold;
+    margin-left: 12px;
+    margin-right: 12px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}

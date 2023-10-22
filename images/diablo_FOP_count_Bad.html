@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://localhost/Graphics-navigator-main/methA.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Accueil</title>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./diablo_FOP_count_Bad_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="./diablo_FOP_count_Bad_files/font-awesome.min.css">
+<link rel="stylesheet" href="./diablo_FOP_count_Bad_files/style.css">
+<script src="./diablo_FOP_count_Bad_files/jquery.min.js.download"></script>
+
+<meta id="ConnectiveDocSignExtentionInstalled" name="ConnectiveDocSignExtentionInstalled" data-extension-version="1.0.6"></head>
+
+<body data-new-gr-c-s-check-loaded="14.1026.0" data-gr-ext-installed="">
+<a class="accueil" href="http://localhost/Graphics-navigator-main/index.php">❮</a>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5"> </div>
+
+        <div class="col-md-2">
+            <div class="row justify-content-center">
+                <a class="prevDdl" onclick="loadprevfeat()" id="prevfeat" style="display: none;">❮</a>
+                <select id="feature">
+                    <option> -Select- </option>
+                    <option>Experience</option><option>Gameplay</option>                </select>
+                <a class="nextDdl" onclick="loadnextfeat()" id="nextfeat">❯</a>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="row justify-content-center">
+                <a class="prevDdl" onclick="loadprevopi()" id="prevopi" style="display: none;">❮</a>
+                <select id="opinion" style="visibility: hidden">
+                    <option> -Select- </option>
+                </select>
+                <a class="nextDdl" onclick="loadnextopi()" id="nextopi" style="display: none;">❯</a>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+
+
+    <div class="row justify-content-center">
+        <p id="graphtitle">FOP Count_Bad</p>
+    </div>
+    <div class="row justify-content-center slideshow">
+        <div class="mySlides" style="display: none;">
+            <img src="./diablo_FOP_count_Bad_files/FOP_Count.png" style="max-width:100%" id="A">
+        </div>
+        <div class="mySlides" style="display: none;">
+            <img src="./diablo_FOP_count_Bad_files/FOP_Importance.png" style="max-width:100%" id="B">
+        </div>
+        <div class="mySlides" style="display: none;">
+            <img src="./diablo_FOP_count_Bad_files/Feature_Count.png" style="max-width:100%" id="C">
+        </div>
+        <div class="mySlides" style="display: none;">
+            <img src="./diablo_FOP_count_Bad_files/Feature_Importance.png" style="max-width:100%" id="D">
+        </div>
+        <div class="mySlides" style="display: block;">
+            <img src="./diablo_FOP_count_Bad_files/FOP_Count_Bad.png" style="max-width:100%" id="A">
+        </div>
+        <div class="mySlides" style="display: none;">
+            <img src="./diablo_FOP_count_Bad_files/FOP_Importance_Bad.png" style="max-width:100%" id="B">
+        </div>
+        <container class="texte" id="texte">
+            <div id="txt1">tatatata</div>
+        </container>
+        <a class="prev" onclick="plusSlides(-1)" id="prev">❮</a>
+        <a class="next" onclick="plusSlides(1)" id="next">❯</a>
+    </div>
+
+</div>
+<script src="./diablo_FOP_count_Bad_files/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./diablo_FOP_count_Bad_files/popper.min.js.download" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="./diablo_FOP_count_Bad_files/bootstrap.min.js.download" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+<script>
+    const xhttp = new XMLHttpRequest();
+
+    var feat = document.getElementById('feature');
+    var opi = document.getElementById('opinion');
+    var texte = document.getElementById('texte');
+    var graphtitle = document.getElementById('graphtitle');
+    var txt1 = document.getElementById('txt1');
+
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var prevfeat = document.getElementById('prevfeat');
+    var nextfeat = document.getElementById('nextfeat');
+    var prevopi = document.getElementById('prevopi');
+    var nextopi = document.getElementById('nextopi');
+
+    prevfeat.style.display = "none";
+    prevopi.style.display = "none";
+    nextopi.style.display = "none";
+
+    var A = document.getElementById('A');
+
+    var slideIndex = 1;
+    var selectedfeat;
+    var selectedopi;
+
+    showSlides(slideIndex);
+
+    function loadfeat() {
+        selectedfeat = feat.options[feat.selectedIndex].value;
+        slideIndex = 1;
+        showSlides(1);
+
+        //Clear dropdown list
+        var j, L = opi.options.length - 1;
+        for(j = L; j >= 0; j--) {
+            opi.remove(j);
+        }
+
+        // Add -Select-
+        var el = document.createElement("option");
+        el.textContent = " -Select- ";
+        el.value = "-Select-";
+        opi.appendChild(el);
+
+        // Switch selected Value
+        if(selectedfeat == '-Select-'){
+            prev.style.visibility = 'visible';
+            next.style.visibility = 'visible';
+            graphtitle.style.visibility = 'visible';
+            A.src = "graphs/Results/MethodA/FOP_Count.png";
+            A.style.display = "block";
+
+            texte.style.display = "none";
+
+            prevfeat.style.display = "none";
+
+            prevopi.style.display = "none";
+            opi.style.visibility = 'hidden';
+            nextopi.style.display = "none";
+        }
+        else{
+            prev.style.visibility = 'hidden';
+            next.style.visibility = 'hidden';
+            graphtitle.style.visibility = 'hidden';
+
+            /*
+            xhttp.onload = function() {
+                var sublist = JSON.parse(this.response);
+
+                if(sublist.length > 1){
+                    console.log("Duplicate png in graphs/Results/MethodA/Features/" + selectedfeat );
+                }
+                else{
+                    A.src = "graphs/Results/MethodA/Features/" + selectedfeat + "/" + sublist[0] + "";
+                }
+            }
+            xhttp.open("GET", "getter.php?path=" + "graphs/Results/MethodA/Features/" + selectedfeat + "/&type=img", true);
+            xhttp.send(null);
+             */
+
+            texte.style.display = "none";
+            prevfeat.style.display = "block";
+
+            prevopi.style.display = "none";
+            opi.style.visibility = 'visible';
+            nextopi.style.display = "block";
+
+            A.src = "graphs/Results/MethodA/Features/" + selectedfeat + "/graph.png";
+            A.style.display = "block";
+
+            if(feat.selectedIndex < feat.options.length - 1){
+                nextfeat.style.display = "block";
+            } else{
+                nextfeat.style.display = "none";
+            }
+
+            xhttp.onload = function() {
+                var sublist = JSON.parse(this.response);
+
+                for(var i = 0; i < sublist.length; i++) {
+                    var opt = sublist[i];
+                    var el = document.createElement("option");
+                    el.textContent = opt;
+                    el.value = opt;
+                    opi.appendChild(el);
+                }
+            }
+
+            xhttp.open("GET", "getter.php?path=" + "graphs/Results/MethodA/Features/" + selectedfeat + "/&type=txt", true);
+            xhttp.send(null);
+        }
+    }
+
+    function loadopi() {
+        selectedopi = opi.options[opi.selectedIndex].value;
+        if(selectedopi == '-Select-'){
+            A.style.display = "block";
+            texte.style.display = "none";
+
+            prevopi.style.display = "none";
+            nextopi.style.display = "block";
+        }
+        else{
+            A.style.display = "none";
+            texte.style.display = "block";
+            prevopi.style.display = "block";
+
+            if(opi.selectedIndex < opi.options.length - 1){
+                nextopi.style.display = "block";
+            } else{
+                nextopi.style.display = "none";
+            }
+
+            xhttp.onload = function() {
+                var sublist = JSON.parse(this.response);
+
+                text = "<ul>";
+                for (let i = 0; i < sublist.length; i++) {
+                    text += "<li>" + sublist[i] + "</li>";
+                }
+                text += "</ul>";
+
+                txt1.innerHTML = text
+            }
+
+            xhttp.open("GET", encodeURI("getter.php?path=" + "graphs/Results/MethodA/Features/" + selectedfeat + "/" + selectedopi + ".txt" + "&type=txtcont"), true);
+            xhttp.send(null);
+        }
+    }
+
+    function loadprevfeat(){
+        feat.selectedIndex -= 1
+        loadfeat()
+    }
+
+    function loadnextfeat(){
+        feat.selectedIndex += 1
+        loadfeat()
+    }
+
+    function loadprevopi(){
+        opi.selectedIndex -= 1
+        loadopi()
+    }
+
+    function loadnextopi(){
+        opi.selectedIndex += 1
+        loadopi()
+    }
+
+    feat.addEventListener('change', loadfeat, false);
+    opi.addEventListener('change', loadopi, false);
+
+
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        var filename = slides[slideIndex-1].getElementsByTagName("img")[0].src.replace(/^.*[\\\/]/, '');
+        filename = filename.replace('_', ' ')
+        filename = filename.replace('.png', '')
+
+        slides[slideIndex-1].style.display = "block";
+        graphtitle.innerHTML = filename;
+    }
+
+
+</script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
